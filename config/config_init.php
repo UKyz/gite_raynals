@@ -26,9 +26,9 @@ try {
     if ($_SERVER['SERVER_NAME'] == "localhost" OR $_SERVER['SERVER_NAME'] == "sikia.synology.me"
         OR $_SERVER['SERVER_NAME'] == "192.168.1.59") {
         $host = "localhost";
-        $dbname = "domaine_les_reynals";
+        $dbname = "gite_raynales";
         $dbuser = "root";
-        $dbmdp = "admin";
+        $dbmdp = "root";
         $dbport = "3306";
     } else {
 //        $host = "db474181553.db.1and1.com";
