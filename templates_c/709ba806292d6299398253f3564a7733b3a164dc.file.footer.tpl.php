@@ -1,25 +1,25 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2018-07-12 16:53:00
-         compiled from "/Applications/MAMP/htdocs/gite_projet/tpl/footer.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:4566727325b476b4cc674c8-83579340%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.12, created on 2018-07-13 11:53:11
+         compiled from "/Users/victorfauquembergue/Sites/gite_raynals/tpl/footer.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:6938556865b487687404917-42091686%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    '9e1a284c02b5cc592cc9b0409d5f5f357cb84249' => 
+    '709ba806292d6299398253f3564a7733b3a164dc' => 
     array (
-      0 => '/Applications/MAMP/htdocs/gite_projet/tpl/footer.tpl',
-      1 => 1531406157,
+      0 => '/Users/victorfauquembergue/Sites/gite_raynals/tpl/footer.tpl',
+      1 => 1531467019,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '4566727325b476b4cc674c8-83579340',
+  'nocache_hash' => '6938556865b487687404917-42091686',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_5b476b4cc73177_71153287',
+  'unifunc' => 'content_5b4876874a99b0_77864035',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5b476b4cc73177_71153287')) {function content_5b476b4cc73177_71153287($_smarty_tpl) {?><!-- footer -->
+<?php if ($_valid && !is_callable('content_5b4876874a99b0_77864035')) {function content_5b4876874a99b0_77864035($_smarty_tpl) {?><!-- footer -->
 <div class="footer-cpy text-center">
     <!--<div class="social_banner">
             <ul class="social_list">

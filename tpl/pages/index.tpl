@@ -6,7 +6,7 @@
         <div class="w3agile-about">
             <div class="col-md-6 col-sm-6  w3_agileits-about-left">
                 <div class="agile-about-left">
-                    <h4 class="agileits-title">Domaine Les Raynals</h4>
+                    <h4 class="agileits-title">Domaineeee  Les Raynalsssss</h4>
                     <p>Gîte pour 6-8 personnes</p>
                 </div>
                 <div class="w3_agileits-about-bottom">

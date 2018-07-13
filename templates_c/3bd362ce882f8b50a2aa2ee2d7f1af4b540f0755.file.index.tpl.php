@@ -1,25 +1,25 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2018-07-12 16:53:00
-         compiled from "/Applications/MAMP/htdocs/gite_projet/tpl/pages/index.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:6469411915b476b4cc51ff7-72257797%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.12, created on 2018-07-13 11:53:11
+         compiled from "/Users/victorfauquembergue/Sites/gite_raynals/tpl/pages/index.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:5009018325b4876873b0d60-67679178%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    '45cd509a1622744e3f663cbe4535b4cdd7c93933' => 
+    '3bd362ce882f8b50a2aa2ee2d7f1af4b540f0755' => 
     array (
-      0 => '/Applications/MAMP/htdocs/gite_projet/tpl/pages/index.tpl',
-      1 => 1531406090,
+      0 => '/Users/victorfauquembergue/Sites/gite_raynals/tpl/pages/index.tpl',
+      1 => 1531472450,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '6469411915b476b4cc51ff7-72257797',
+  'nocache_hash' => '5009018325b4876873b0d60-67679178',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_5b476b4cc5bf34_60947518',
+  'unifunc' => 'content_5b4876873ff807_50717554',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5b476b4cc5bf34_60947518')) {function content_5b476b4cc5bf34_60947518($_smarty_tpl) {?><!-- about -->
+<?php if ($_valid && !is_callable('content_5b4876873ff807_50717554')) {function content_5b4876873ff807_50717554($_smarty_tpl) {?><!-- about -->
 <div class="jarallax agileits-about agile-section" id="about">
     <div class="container">
         <span class="wthree-line wthree-left"></span>
@@ -27,7 +27,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <div class="w3agile-about">
             <div class="col-md-6 col-sm-6  w3_agileits-about-left">
                 <div class="agile-about-left">
-                    <h4 class="agileits-title">Domaine Les Raynals</h4>
+                    <h4 class="agileits-title">Domaineeee  Les Raynalsssss</h4>
                     <p>Gîte pour 6-8 personnes</p>
                 </div>
                 <div class="w3_agileits-about-bottom">
@@ -641,6 +641,9 @@ echo "<script>";
 ?<?php ?>>-->
 <!-- //Calendar -->
 <!-- Calendar Input -->
+<script src="./web/js/jquery-1.12.4.js"></script>
+<script src="./web/js/jquery-ui.js"></script>
+<link rel="stylesheet" href="./web/css/jquery-ui.css">
 <script>
     const lang = {
         closeText: 'Fermer',

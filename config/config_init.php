@@ -5,7 +5,7 @@ session_start();
 header("Cache-Control: no-cache");
 
 //Défini le répertoire racine
-define('_ROOT_', "gite_projet");
+define('_ROOT_', "gite_raynals");
 
 // Chargement Smarty et Defines
 require('defines.inc.php');

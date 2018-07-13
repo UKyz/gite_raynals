@@ -1,25 +1,25 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2018-07-12 16:53:00
-         compiled from "/Applications/MAMP/htdocs/gite_projet/tpl/header.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:10722359545b476b4cc21b91-75161003%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.12, created on 2018-07-13 11:53:11
+         compiled from "/Users/victorfauquembergue/Sites/gite_raynals/tpl/header.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:298251145b4876872af1c9-86292831%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    '3033feaecf4cc7432c7cc7801946d5bb100a72bd' => 
+    '140b24013d665d9c35e6f37089f49fcce247d3fa' => 
     array (
-      0 => '/Applications/MAMP/htdocs/gite_projet/tpl/header.tpl',
-      1 => 1531405250,
+      0 => '/Users/victorfauquembergue/Sites/gite_raynals/tpl/header.tpl',
+      1 => 1531470287,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '10722359545b476b4cc21b91-75161003',
+  'nocache_hash' => '298251145b4876872af1c9-86292831',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_5b476b4cc4d5a2_49709900',
+  'unifunc' => 'content_5b4876873a7503_63537555',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5b476b4cc4d5a2_49709900')) {function content_5b476b4cc4d5a2_49709900($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_5b4876873a7503_63537555')) {function content_5b4876873a7503_63537555($_smarty_tpl) {?><!DOCTYPE html>
 <html lang="fr">
 
 <head>
@@ -71,7 +71,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                 <nav class="menu menu--miranda">
                     <ul class="nav navbar-nav menu__list">
                         <li class="menu__item">
-                            <a href="#about" class="scroll menu__link">À Propos</a>
+                            <a href="#about" class="scroll menu__link">À Proposeee</a>
                         </li>
                         <li class="menu__item">
                             <a href="#services" class="scroll menu__link">Location</a>
