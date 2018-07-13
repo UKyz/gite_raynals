@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2018-07-13 11:53:11
+<?php /* Smarty version Smarty-3.1.12, created on 2018-07-13 15:51:08
          compiled from "/Users/victorfauquembergue/Sites/gite_raynals/tpl/pages/index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:5009018325b4876873b0d60-67679178%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '3bd362ce882f8b50a2aa2ee2d7f1af4b540f0755' => 
     array (
       0 => '/Users/victorfauquembergue/Sites/gite_raynals/tpl/pages/index.tpl',
-      1 => 1531472450,
+      1 => 1531489794,
       2 => 'file',
     ),
   ),
@@ -15,9 +15,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
-  'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
   'unifunc' => 'content_5b4876873ff807_50717554',
+  'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5b4876873ff807_50717554')) {function content_5b4876873ff807_50717554($_smarty_tpl) {?><!-- about -->
 <div class="jarallax agileits-about agile-section" id="about">
@@ -208,7 +208,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                 </div>
                 <div class="col-md-8 contact-right">
                     <h4>Demande de réservation</h4>
-                    <form action="./reservation.php" method="post" name="Reservation">
+                    <form action="./index.php?action=demandeResa" method="post" name="Reservation">
                         <input type="hidden" name="type" value="reservation_gite_domaine_les_reynals">
                         <h5>Informations personnelles</h5>
                         <input type="text" class="name" name="name" placeholder="Nom *" required="">
@@ -521,72 +521,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
             style="border:0" allowfullscreen></iframe>
 </div>
 <!-- //contact -->
-
-<!-- modal-->
-<div id="myModal" class="modal">
-
-    <!-- Modal content -->
-    <div class="modal-content">
-        <div class="modal-header">
-            <span class="close">&times;</span>
-            <h2>Votre réservation a bien été envoyé</h2>
-        </div>
-        <div class="modal-body">
-            <p>Un mail vous a été envoyé afin de récapituler votre demande de réservation.</p>
-            <p>Pour plus d'information n'hésitez pas à nous joindre par téléphone.</p>
-        </div>
-    </div>
-</div>
-
-<div id="myModal2" class="modal">
-    <!-- Modal content -->
-    <div class="modal-content">
-        <div class="modal-header">
-            <span class="close" id="close2">&times;</span>
-            <h2>Votre réservation a été refusée</h2>
-        </div>
-        <div class="modal-body">
-            <p>La dates que vous avez choisie ne sont pas disponible</p>
-            <p>Veuillez recommencer et vérifier que vos dates ne sont pas déjà réservées et qu'elles sont
-                réservables</p>
-        </div>
-    </div>
-</div>
-
-<!--<<?php ?>?php
-        if (isset($_GET) and $_GET['type'] == "confirmation") {
-            echo "<script>document.getElementById('myModal').style.display = \"block\";</script>";
-} else if (isset($_GET) and $_GET['type'] == "refuse") {
-    echo "<script>document.getElementById('myModal2').style.display = \"block\";</script>";
-}?<?php ?>>-->
-
-<script>
-    const modal = document.getElementById('myModal');
-    const modal2 = document.getElementById('myModal2');
-    const span = document.getElementsByClassName("close")[0];
-    const span2 = document.getElementsByClassName("close")[1];
-
-    span.onclick = () => {
-        modal.style.display = "none";
-    };
-
-    span2.onclick = () => {
-        modal2.style.display = "none";
-    };
-
-    window.onclick = (event) => {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
-
-    window.onclick = (event) => {
-        if (event.target == modal2) {
-            modal2.style.display = "none";
-        }
-    }
-</script>
-<!-- //modal -->
 <!-- Calendar -->
 <script src="./node_modules/moment/moment.js"></script>
 <script>
