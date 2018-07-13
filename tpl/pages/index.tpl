@@ -620,6 +620,9 @@ echo "<script>";
 ?>-->
 <!-- //Calendar -->
 <!-- Calendar Input -->
+<script src="./web/js/jquery-1.12.4.js"></script>
+<script src="./web/js/jquery-ui.js"></script>
+<link rel="stylesheet" href="./web/css/jquery-ui.css">
 <script>
     const lang = {
         closeText: 'Fermer',

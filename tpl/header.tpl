@@ -50,7 +50,7 @@
                 <nav class="menu menu--miranda">
                     <ul class="nav navbar-nav menu__list">
                         <li class="menu__item">
-                            <a href="#about" class="scroll menu__link">À Propos</a>
+                            <a href="#about" class="scroll menu__link">À Proposeee</a>
                         </li>
                         <li class="menu__item">
                             <a href="#services" class="scroll menu__link">Location</a>
