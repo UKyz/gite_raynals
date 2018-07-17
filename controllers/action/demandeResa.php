@@ -6,10 +6,7 @@
  * Time: 14:43
  */
 
-echo "Salut";
-
 if (Reservation::verifResa($_POST)) {
-    echo "Salut";
     Reservation::addResa($_POST);
     Reservation::mailToGite($_POST);
     Reservation::mailToClient($_POST);

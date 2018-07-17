@@ -520,6 +520,7 @@
             document.getElementById('date_end').value = date_fin;
         }
     };
+    {$calendrier_script}
 </script>
 
 <!--<?php
@@ -556,6 +557,7 @@ echo "<script>";
 <!-- Calendar Input -->
 <script src="./web/js/jquery-1.12.4.js"></script>
 <script src="./web/js/jquery-ui.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
 <link rel="stylesheet" href="./web/css/jquery-ui.css">
 <script>
     const lang = {

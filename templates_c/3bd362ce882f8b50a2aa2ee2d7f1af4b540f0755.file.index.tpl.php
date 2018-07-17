@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2018-07-13 15:51:08
+<?php /* Smarty version Smarty-3.1.12, created on 2018-07-17 09:17:45
          compiled from "/Users/victorfauquembergue/Sites/gite_raynals/tpl/pages/index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:5009018325b4876873b0d60-67679178%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '3bd362ce882f8b50a2aa2ee2d7f1af4b540f0755' => 
     array (
       0 => '/Users/victorfauquembergue/Sites/gite_raynals/tpl/pages/index.tpl',
-      1 => 1531489794,
+      1 => 1531811863,
       2 => 'file',
     ),
   ),
@@ -17,6 +17,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'version' => 'Smarty-3.1.12',
   'unifunc' => 'content_5b4876873ff807_50717554',
+  'variables' => 
+  array (
+    'calendrier_script' => 0,
+  ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5b4876873ff807_50717554')) {function content_5b4876873ff807_50717554($_smarty_tpl) {?><!-- about -->
@@ -541,6 +545,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
             document.getElementById('date_end').value = date_fin;
         }
     };
+    <?php echo $_smarty_tpl->tpl_vars['calendrier_script']->value;?>
+
 </script>
 
 <!--<<?php ?>?php
@@ -577,6 +583,7 @@ echo "<script>";
 <!-- Calendar Input -->
 <script src="./web/js/jquery-1.12.4.js"></script>
 <script src="./web/js/jquery-ui.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
 <link rel="stylesheet" href="./web/css/jquery-ui.css">
 <script>
     const lang = {
