@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2018-07-13 11:53:11
+<?php /* Smarty version Smarty-3.1.12, created on 2018-07-18 09:29:19
          compiled from "/Users/victorfauquembergue/Sites/gite_raynals/tpl/footer.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:6938556865b487687404917-42091686%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '709ba806292d6299398253f3564a7733b3a164dc' => 
     array (
       0 => '/Users/victorfauquembergue/Sites/gite_raynals/tpl/footer.tpl',
-      1 => 1531467019,
+      1 => 1531898936,
       2 => 'file',
     ),
   ),
@@ -15,9 +15,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
-  'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
   'unifunc' => 'content_5b4876874a99b0_77864035',
+  'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5b4876874a99b0_77864035')) {function content_5b4876874a99b0_77864035($_smarty_tpl) {?><!-- footer -->
 <div class="footer-cpy text-center">
@@ -113,8 +113,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     });
 </script>
 <!-- //requried-jsfiles-for owl -->
-<!-- //testimonials -->
-
 <!-- start-smooth-scrolling -->
 <script src="./web/js/move-top.js"></script>
 <script src="./web/js/easing.js"></script>

@@ -6,7 +6,7 @@
  * Time: 12:22
  */
 
-require('./config/config.php');
+//require('./config/config_init.php');
 
 class Reservation {
 
@@ -16,27 +16,28 @@ class Reservation {
 
         if (isset($tab) and isset($tab['btn_submit_resa'])) {
 
-            $resaOK = true;
-
             $date_begin = date("Y-m-d", strtotime(str_replace('/', '-', $tab['date_begin'])));
 
             $date_end = date("Y-m-d", strtotime(str_replace('/', '-', $tab['date_end'])));
-            $date_end = date("Y-m-d", strtotime($date_end . ' +1 days'));
 
-            $date = $date_begin;
+            $resaOK = ($date_begin >= $date_end) ? false : true;
 
-            while ($date != $date_end) {
-                global $bdd;
-                $req = $bdd->prepare('SELECT * FROM calendrier WHERE date = :date');
-                $req->execute(array('date' => $date));
+            if ($resaOK) {
+                $date = $date_begin;
 
-                $donnees = $req->fetch();
+                while ($date != $date_end) {
+                    global $bdd;
+                    $req = $bdd->prepare('SELECT * FROM calendrier WHERE date = :date');
+                    $req->execute(array('date' => $date));
 
-                if ($donnees != null and $donnees['id_reservation'] != 0) {
-                    $resaOK = false;
+                    $donnees = $req->fetch();
+
+                    if ($donnees != null and $donnees['id_reservation'] != 0) {
+                        $resaOK = false;
+                    }
+
+                    $date = date("Y-m-d", strtotime($date . ' +1 days'));
                 }
-
-                $date = date("Y-m-d", strtotime($date . ' +1 days'));
             }
         }
 

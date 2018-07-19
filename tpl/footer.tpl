@@ -92,8 +92,6 @@
     });
 </script>
 <!-- //requried-jsfiles-for owl -->
-<!-- //testimonials -->
-
 <!-- start-smooth-scrolling -->
 <script src="./web/js/move-top.js"></script>
 <script src="./web/js/easing.js"></script>

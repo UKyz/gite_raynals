@@ -11,9 +11,7 @@ $req->execute(array(
     'date' => date('Y-m-j')
 ));
 
-
 $req = $bdd->query('SELECT * FROM calendrier ORDER BY date');
-
 while ($donnees = $req->fetch()) {
     if ($donnees['id_reservation'] == 0) {
         $calendrier_script .= "demoPicker.tooltips = [{

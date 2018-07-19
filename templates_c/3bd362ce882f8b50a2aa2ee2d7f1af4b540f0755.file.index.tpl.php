@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2018-07-17 09:17:45
+<?php /* Smarty version Smarty-3.1.12, created on 2018-07-18 16:40:06
          compiled from "/Users/victorfauquembergue/Sites/gite_raynals/tpl/pages/index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:5009018325b4876873b0d60-67679178%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '3bd362ce882f8b50a2aa2ee2d7f1af4b540f0755' => 
     array (
       0 => '/Users/victorfauquembergue/Sites/gite_raynals/tpl/pages/index.tpl',
-      1 => 1531811863,
+      1 => 1531924805,
       2 => 'file',
     ),
   ),
@@ -48,25 +48,25 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                             lectus et velit pellentesque dictum.</span>
                 <ul class="w3l-list">
                     <li>
-                                <span class="w3ls-type fa fa-angle-double-right" aria-hidden="true">
+                        <span class="w3ls-type fa fa-angle-double-right" aria-hidden="true">
 
-                                </span>Lorem ipsum dolor</li>
+                        </span>Lorem ipsum dolor</li>
                     <li>
-                                <span class="w3ls-type fa fa-angle-double-right" aria-hidden="true">
+                        <span class="w3ls-type fa fa-angle-double-right" aria-hidden="true">
 
-                                </span>Lorem ipsum dolor</li>
+                        </span>Lorem ipsum dolor</li>
                     <li>
-                                <span class="w3ls-type fa fa-angle-double-right" aria-hidden="true">
+                        <span class="w3ls-type fa fa-angle-double-right" aria-hidden="true">
 
-                                </span>Lorem ipsum dolor</li>
+                        </span>Lorem ipsum dolor</li>
                     <li>
-                                <span class="w3ls-type fa fa-angle-double-right" aria-hidden="true">
+                        <span class="w3ls-type fa fa-angle-double-right" aria-hidden="true">
 
-                                </span>Lorem ipsum dolor</li>
+                        </span>Lorem ipsum dolor</li>
                     <li>
-                                <span class="w3ls-type fa fa-angle-double-right" aria-hidden="true">
+                        <span class="w3ls-type fa fa-angle-double-right" aria-hidden="true">
 
-                                </span>Lorem ipsum dolor</li>
+                        </span>Lorem ipsum dolor</li>
                 </ul>
             </div>
             <div class="clearfix"></div>
@@ -185,9 +185,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     </div>
 </div>
 <!-- //package -->
-
 <!-- reservation form -->
-
 <div class="w3ls-contact agile-section" id="reservation" style="display: none;">
     <div class="container">
         <h3 class="agileits-title text-center">Réserver</h3>
@@ -245,11 +243,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         </div>
     </div>
 </div>
-
-<!--<script>
-    var date = document.getElementById('date_begin').value;
-    $("#calcul_price").load("./test.php");
-</script>-->
 
 <!-- //reservation form -->
 <!-- gallery -->
@@ -543,48 +536,54 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                 moment(demoPicker.selectedDates[demoPicker.selectedDates.length - 1]).format('DD/MM/YYYY');
             document.getElementById('date_begin').value = date_debut;
             document.getElementById('date_end').value = date_fin;
+
+            const url = './controllers/action/updatePriceResa.php';
+            $.post(url, { date_begin: document.getElementById('date_begin').value,
+                date_end: document.getElementById('date_end').value }).done(function(data){
+                $('input[id="calcul_price"]').val(data);
+            });
         }
     };
+
     <?php echo $_smarty_tpl->tpl_vars['calendrier_script']->value;?>
 
 </script>
-
-<!--<<?php ?>?php
-        require('./config/config.php');
-
-        $req = $bdd->query('SELECT * FROM calendrier ORDER BY date');
-
-echo "<script>";
-
-    while ($donnees = $req->fetch()) {
-        if ($donnees['id_reservation'] == 0) {
-            echo "demoPicker.tooltips = [{
-            date : new Date('" . $donnees['date'] . "'),
-            text : '" . $donnees['price'] . "€'
-        }];";
-    } else if ($donnees['id_reservation'] == -1) {
-        echo "demoPicker.disabledDates = [
-        new Date('" . $donnees['date'] . "')
-    ];";
-    } else {
-        echo "demoPicker.highlight = [{
-        start: new Date('" . $donnees['date'] . "'),
-        end: new Date('" . $donnees['date'] . "'),
-        backgroundColor: '#05676E',
-            color: '#fff',
-            legend: 'Réservé'
-    }];";
-    }
-    }
-
-    echo "</script>";
-?<?php ?>>-->
 <!-- //Calendar -->
 <!-- Calendar Input -->
 <script src="./web/js/jquery-1.12.4.js"></script>
 <script src="./web/js/jquery-ui.js"></script>
-<script src="https://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="./web/js/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
 <link rel="stylesheet" href="./web/css/jquery-ui.css">
+<!--<script src="https://code.jquery.com/jquery-1.10.2.js"></script>-->
+<script>
+    $(function() {
+        $('input[id="date_begin"]').datepicker({
+            onSelect: function(dateText) {
+                //display("Selected date: " + dateText + ", Current Selected Value= " + this.value);
+                $(this).change();
+            }
+        }).on("change", function() {
+            const url = './controllers/action/updatePriceResa.php';
+            $.post(url, { date_begin: document.getElementById('date_begin').value,
+                date_end: document.getElementById('date_end').value }).done(function(data){
+                $('input[id="calcul_price"]').val(data);
+            });
+        });
+
+        $('input[id="date_end"]').datepicker({
+            onSelect: function(dateText) {
+                //display("Selected date: " + dateText + ", Current Selected Value= " + this.value);
+                $(this).change();
+            }
+        }).on("change", function() {
+            const url = './controllers/action/updatePriceResa.php';
+            $.post(url, { date_begin: document.getElementById('date_begin').value,
+                date_end: document.getElementById('date_end').value }).done(function(data){
+                $('input[id="calcul_price"]').val(data);
+            });
+        });
+    });
+</script>
 <script>
     const lang = {
         closeText: 'Fermer',
