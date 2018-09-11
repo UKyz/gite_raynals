@@ -22,24 +22,19 @@ if (isset($_GET['action']) && file_exists(_CTRL_ . 'action/' . str_replace('.', 
 }
 
 // Affichage des templates
-$smarty->display(_TPL_ . 'header.tpl');
+if ($_GET['action'] != "updatePriceResa" and $_GET['action'] != "updateDetailPrice") {
+    $smarty->display(_TPL_ . 'header.tpl');
 
-if (isset($_GET['page']) && file_exists(_TPL_ . 'pages/' . str_replace('.', '', $_GET['page']) . '.tpl')) {
-    $smarty->display(_TPL_ . 'pages/' . $_GET['page'] . '.tpl');
-} else {
-    $smarty->assign('current_page', "index");
-    $smarty->display(_TPL_ . 'pages/index.tpl');
-    if (isset($_GET['type']) && $_GET['type'] == "confirmation") {
-        $smarty->display(_TPL_ . 'modal/confirmation.tpl');
-    } else if (isset($_GET['type']) && $_GET['type'] == "refuse") {
-        $smarty->display(_TPL_ . 'modal/refuse.tpl');
+    if (isset($_GET['page']) && file_exists(_TPL_ . 'pages/' . str_replace('.', '', $_GET['page']) . '.tpl')) {
+        $smarty->display(_TPL_ . 'pages/' . $_GET['page'] . '.tpl');
+    } else {
+        $smarty->assign('current_page', "index");
+        $smarty->display(_TPL_ . 'pages/index.tpl');
+        if (isset($_GET['type']) &&
+            file_exists(_TPL_ . 'modal/' . str_replace('.', '', $_GET['type']) . '.tpl')) {
+            $smarty->display(_TPL_ . 'modal/' . $_GET['type'] . '.tpl');
+        }
     }
-}
 
-if(isset($_SESSION['u_id']) && !empty($_SESSION['u_id'])){
-    $smarty->assign('session_u_id', $_SESSION['u_id']);
-}else{
-    $smarty->assign('session_u_id', null);
+    $smarty->display(_TPL_ . 'footer.tpl');
 }
-
-$smarty->display(_TPL_ . 'footer.tpl');

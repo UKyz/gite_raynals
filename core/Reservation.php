@@ -6,7 +6,7 @@
  * Time: 12:22
  */
 
-//require('./config/config_init.php');
+//include('../../config/config_init.php');
 
 class Reservation {
 
@@ -21,6 +21,16 @@ class Reservation {
             $date_end = date("Y-m-d", strtotime(str_replace('/', '-', $tab['date_end'])));
 
             $resaOK = ($date_begin >= $date_end) ? false : true;
+
+            if ($resaOK) {
+                $resaOK = (date('w',  strtotime(str_replace('/', '-', $tab['date_begin']))) == 6
+                    && date('w',  strtotime(str_replace('/', '-', $tab['date_end']))) == 6)
+                    ? true : false;
+            }
+
+            if ($resaOK) {
+                $resaOK = ($date_begin < date("Y-m-d")) ? false : true;
+            }
 
             if ($resaOK) {
                 $date = $date_begin;
@@ -72,7 +82,7 @@ class Reservation {
         /* Mail pour le gîte */
 
         $name = stripslashes($tab['prenom'] . " " . $tab['nom']);
-        $email = trim($tab['email']);
+        $email = "ccarvalho@sikia.fr";
         $tel = stripslashes($tab['tel']);
 
         $subject = "[Gîte Domaine Les Raynals - Réservation] Vous avez reçu une réservation provenant du site Domaine les Raynals.";
@@ -111,7 +121,7 @@ class Reservation {
 
         /* Mail pour le réservateur */
 
-        $email_2 = "nepasrepondre@domainedesraynals";
+        $email_2 = "ccarvalho@sikia.fr";
 
         $subject = "[Gîte Domaine Les Raynals - Réservation] Vous avez formulé une réservation sur le site Domaine les Raynals.";
 
@@ -139,6 +149,129 @@ class Reservation {
             }*/
         }
 
+    }
 
+    public static function calculPriceResa($date_begin, $date_end, $tab_choice) {
+
+        $price = 0;
+        $date = $date_begin;
+        $nb_days = 0;
+
+        while ($date != $date_end) {
+            global $bdd;
+            $req = $bdd->prepare('SELECT * FROM calendrier WHERE date = :date');
+            $req->execute(array('date' => $date));
+
+            $donnees = $req->fetch();
+
+            $price += $donnees['price'];
+            $date = date("Y-m-d", strtotime($date . ' +1 days'));
+            $nb_days ++;
+        }
+
+        $req = $bdd->prepare('SELECT * FROM services WHERE can_select = :can_select');
+        $req->execute(array('can_select' => 'no'));
+
+        while ($donnees = $req->fetch()) {
+            $price += $donnees['price'];
+        }
+
+        foreach ($tab_choice as $key => $value) {
+            $req = $bdd->prepare('SELECT * FROM services WHERE can_select = :can_select AND id = :id');
+            $req->execute(array(
+                'can_select' => 'yes',
+                'id' => $value));
+
+            while ($donnees = $req->fetch()) {
+                $price += $donnees['price'];
+            }
+        }
+
+        return $price;
+
+    }
+
+    public static function calculPriceResa2($date_begin, $date_end) {
+
+        $price = 0;
+        $date = $date_begin;
+
+        while ($date != $date_end) {
+            global $bdd;
+            $req = $bdd->prepare('SELECT * FROM calendrier WHERE date = :date');
+            $req->execute(array('date' => $date));
+
+            $donnees = $req->fetch();
+
+            $price += $donnees['price'];
+            $date = date("Y-m-d", strtotime($date . ' +1 days'));
+        }
+
+        return $price;
+
+    }
+
+    public static function verifResa2($date_begin, $date_end) {
+
+        $resaOK = ($date_begin >= $date_end) ? false : true;
+
+        if ($resaOK) {
+            $resaOK = (date('w',  strtotime(str_replace('/', '-', $date_begin))) == 6
+                && date('w',  strtotime(str_replace('/', '-', $date_end))) == 6)
+                ? true : false;
+        }
+
+        if ($resaOK) {
+            $resaOK = ($date_begin < date("Y-m-d")) ? false : true;
+        }
+
+        if ($resaOK) {
+            $date = $date_begin;
+
+            while ($date != $date_end) {
+                global $bdd;
+                $req = $bdd->prepare('SELECT * FROM calendrier WHERE date = :date');
+                $req->execute(array('date' => $date));
+
+                $donnees = $req->fetch();
+
+                if ($donnees != null and $donnees['id_reservation'] != 0) {
+                    $resaOK = false;
+                }
+                $date = date("Y-m-d", strtotime($date . ' +1 days'));
+            }
+        }
+
+        return $resaOK;
+    }
+
+    public static function calculNbDays($date_begin, $date_end) {
+
+        $resaOK = ($date_begin >= $date_end) ? false : true;
+        $nbDays = 0;
+
+        if ($resaOK) {
+            $date = $date_begin;
+
+            while ($date != $date_end) {
+                $nbDays ++;
+                $date = date("Y-m-d", strtotime($date . ' +1 days'));
+            }
+        }
+
+        return $nbDays;
+    }
+
+    public static function deleteOldReservation() {
+        $date = date('Y-m-d');
+        global $bdd;
+        $req = $bdd->prepare('DELETE FROM reservations WHERE date_end <= :date_end');
+        $req->execute(array(
+            'date_end' => $date));
+
+        $req = $bdd->prepare('DELETE FROM reservations WHERE date_begin < :date_begin AND status = :status');
+        $req->execute(array(
+            'date_begin' => $date,
+            'status' => "en attente"));
     }
 }

@@ -5,7 +5,7 @@ session_start();
 header("Cache-Control: no-cache");
 
 //Défini le répertoire racine
-define('_ROOT_', "gite_raynals");
+define('_ROOT_', "gite_raynals_front");
 
 // Chargement Smarty et Defines
 require('defines.inc.php');
@@ -31,11 +31,11 @@ try {
         $dbmdp = "admin";
         $dbport = "3306";
     } else {
-//        $host = "db474181553.db.1and1.com";
-//        $dbname = "db474181553";
-//        $dbuser = "dbo474181553";
-//        $dbmdp = "Yua6rbGQ";
-//        $dbport = "3306";
+        $host = "db745437427.db.1and1.com";
+        $dbname = "db745437427";
+        $dbuser = "dbo745437427";
+        $dbmdp = "R@yn@les18*";
+        $dbport = "3306";
     }
     $pdo_options[PDO::ATTR_ERRMODE] = PDO::ERRMODE_EXCEPTION;
     $bdd = new PDO("mysql:host=".$host.";port=".$dbport.";dbname=".$dbname, $dbuser, $dbmdp, $pdo_options);

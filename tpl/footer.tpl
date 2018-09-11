@@ -35,40 +35,6 @@
 <script src="./web/js/jquery-2.2.3.min.js"></script>
 <script src="./node_modules/moment/moment.js"></script>
 <!-- //js -->
-<!-- link menu scroll -->
-<script>
-    $(function () {
-        $("#btn_reserver1").click(() => {
-            $("#reservation").show();
-            $('html, body').animate({
-                scrollTop: $('#reservation').offset().top
-            }, 'slow');
-        });
-
-        $("#btn_reserver2").click(() => {
-            $("#reservation").show();
-            $('html, body').animate({
-                scrollTop: $('#reservation').offset().top
-            }, 'slow');
-        });
-
-        $("#btn_reserver3").click(() => {
-            $("#reservation").show();
-            $('html, body').animate({
-                scrollTop: $('#reservation').offset().top
-            }, 'slow');
-        });
-
-        $("#btn_reserver_close").click(() => {
-            $("#reservation").hide();
-            $('html, body').animate({
-                scrollTop: $('#prix').offset().top
-            }, 'slow');
-        });
-    });
-</script>
-<!-- //link menu scroll -->
-
 <!-- gallery light box -->
 <script src="./web/js/lightbox-plus-jquery.min.js"></script>
 <script src="./web/js/jquery-1.12.4.js"></script>
@@ -95,17 +61,6 @@
 <!-- start-smooth-scrolling -->
 <script src="./web/js/move-top.js"></script>
 <script src="./web/js/easing.js"></script>
-<script>
-    jQuery(document).ready(function ($) {
-        $(".scroll").click(function (event) {
-            event.preventDefault();
-
-            $('html,body').animate({
-                scrollTop: $(this.hash).offset().top
-            }, 1000);
-        });
-    });
-</script>
 <!-- //end-smooth-scrolling -->
 <!-- smooth-scrolling-of-move-up -->
 <script>
